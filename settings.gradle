@@ -1,0 +1,2 @@
+include ':app', ':panopticon-event-logger'
+rootProject.name='panopticon'
