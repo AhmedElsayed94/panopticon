@@ -1,19 +1,46 @@
-package com.example.panopticon_event_logger;
+package com.example.panopticon_event_logger.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
 public class EventLoggerModel {
 
+    @SerializedName("ip")
+    @Expose
     private String ip;
+    @SerializedName("app_id")
+    @Expose
     private String appId ;
+    @SerializedName("app_name")
+    @Expose
     private String appName;
+    @SerializedName("event_name")
+    @Expose
     private String eventName;
+    @SerializedName("user_id")
+    @Expose
     private int userId ;
+    @SerializedName("user_type")
+    @Expose
     private String userType ;
+    @SerializedName("device_model")
+    @Expose
     private String deviceModel;
+    @SerializedName("device_id")
+    @Expose
     private String deviceId ;
+    @SerializedName("log_time")
+    @Expose
     private String logTime ;
+    @SerializedName("event_data")
+    @Expose
     private HashMap<String, String> eventData ;
+    @SerializedName("app_version")
+    @Expose
     private String appVersion;
 
     public String getIp() {
@@ -155,6 +182,7 @@ public class EventLoggerModel {
     }
 
 
+    @NotNull
     @Override
     public String toString() {
         return "EventLoggerModel{" +
