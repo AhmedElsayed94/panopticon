@@ -2,73 +2,81 @@ package com.example.panopticon_event_logger.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 class EventLoggerModel private constructor(builder: EventLoggerBuilder) {
+
     @SerializedName("ip")
     @Expose
-    val ip: String?
+    var ip: String = ""
     @SerializedName("app_id")
     @Expose
-    val appId: String?
+    var appId: String = ""
     @SerializedName("app_name")
     @Expose
-    val appName: String?
+    var appName: String = ""
     @SerializedName("event_name")
     @Expose
-    val eventName: String?
+    var eventName: String = ""
     @SerializedName("user_id")
     @Expose
-    val userId: Int
+    var userId: Int
     @SerializedName("user_type")
     @Expose
-    val userType: String?
+    var userType: String = ""
     @SerializedName("device_model")
     @Expose
-    val deviceModel: String?
+    var deviceModel: String = ""
     @SerializedName("device_id")
     @Expose
-    val deviceId: String?
+    var deviceId: String = ""
     @SerializedName("log_time")
     @Expose
-    val logTime: String?
+    var logTime: String = ""
     @SerializedName("event_data")
     @Expose
-    val eventData: HashMap<String, String>
+    var eventData: String = ""
     @SerializedName("app_version")
     @Expose
-    val appVersion: String?
+    var appVersion: String = ""
+    @SerializedName("lat")
+    @Expose
+    var lat: String = ""
+    @SerializedName("lng")
+    @Expose
+    var lng : String = ""
 
     //Builder Class
     class EventLoggerBuilder {
-        var ip: String? = null
-        var appId: String? = null
-        var appName: String? = null
-        var eventName: String? = null
+        var ip: String = ""
+        var appId: String = ""
+        var appName: String = ""
+        var eventName: String = ""
         var userId = 0
-        var userType: String? = null
-        var deviceModel: String? = null
-        var deviceId: String? = null
-        var logTime: String? = null
-        var eventData = HashMap<String, String>()
-        var appVersion: String? = null
+        var userType: String = ""
+        var deviceModel: String = ""
+        var deviceId: String = ""
+        var logTime: String = ""
+        var eventData : String = ""
+        var appVersion: String = ""
+        var lat : String = ""
+        var lng: String = ""
 
-        fun setIp(ip: String?): EventLoggerBuilder {
+        fun setIp(ip: String): EventLoggerBuilder {
             this.ip = ip
             return this
         }
 
-        fun setAppId(appId: String?): EventLoggerBuilder {
+        fun setAppId(appId: String): EventLoggerBuilder {
             this.appId = appId
             return this
         }
 
-        fun setAppName(appName: String?): EventLoggerBuilder {
+        fun setAppName(appName: String): EventLoggerBuilder {
             this.appName = appName
             return this
         }
 
-        fun setEventName(eventName: String?): EventLoggerBuilder {
+        fun setEventName(eventName: String): EventLoggerBuilder {
             this.eventName = eventName
             return this
         }
@@ -78,55 +86,48 @@ class EventLoggerModel private constructor(builder: EventLoggerBuilder) {
             return this
         }
 
-        fun setUserType(userType: String?): EventLoggerBuilder {
+        fun setUserType(userType: String): EventLoggerBuilder {
             this.userType = userType
             return this
         }
 
-        fun setDeviceModel(deviceModel: String?): EventLoggerBuilder {
+        fun setDeviceModel(deviceModel: String): EventLoggerBuilder {
             this.deviceModel = deviceModel
             return this
         }
 
-        fun setDeviceId(deviceId: String?): EventLoggerBuilder {
+        fun setDeviceId(deviceId: String): EventLoggerBuilder {
             this.deviceId = deviceId
             return this
         }
 
-        fun setLogTime(logTime: String?): EventLoggerBuilder {
+        fun setLogTime(logTime: String): EventLoggerBuilder {
             this.logTime = logTime
             return this
         }
 
-        fun setEventData(eventData: HashMap<String, String>): EventLoggerBuilder {
+        fun setEventData(eventData: String): EventLoggerBuilder {
             this.eventData = eventData
             return this
         }
 
-        fun setAppVersion(appVersion: String?): EventLoggerBuilder {
+        fun setAppVersion(appVersion: String): EventLoggerBuilder {
             this.appVersion = appVersion
+            return this
+        }
+
+        fun setLat(lat: String): EventLoggerBuilder {
+            this.lat = lat
+            return this
+        }
+        fun setLng(lng: String): EventLoggerBuilder {
+            this.lng = lng
             return this
         }
 
         fun build(): EventLoggerModel {
             return EventLoggerModel(this)
         }
-    }
-
-    override fun toString(): String {
-        return "EventLoggerModel{" +
-                "ip='" + ip + '\'' +
-                ", appId='" + appId + '\'' +
-                ", appName='" + appName + '\'' +
-                ", eventName='" + eventName + '\'' +
-                ", userId=" + userId +
-                ", userType='" + userType + '\'' +
-                ", deviceModel='" + deviceModel + '\'' +
-                ", deviceId='" + deviceId + '\'' +
-                ", logTime='" + logTime + '\'' +
-                ", eventData=" + eventData +
-                ", appVersion='" + appVersion + '\'' +
-                '}'
     }
 
     init {
@@ -141,5 +142,13 @@ class EventLoggerModel private constructor(builder: EventLoggerBuilder) {
         logTime = builder.logTime
         eventData = builder.eventData
         appVersion = builder.appVersion
+        lat = builder.lat
+        lng = builder.lng
     }
+
+    override fun toString(): String {
+        return "EventLoggerModel(ip=$ip, appId=$appId, appName=$appName, eventName=$eventName, userId=$userId, userType=$userType, deviceModel=$deviceModel, deviceId=$deviceId, logTime=$logTime, eventData=$eventData, appVersion=$appVersion, lat=$lat, lng=$lng)"
+    }
+
+
 }

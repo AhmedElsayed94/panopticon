@@ -11,13 +11,11 @@ import java.util.concurrent.TimeUnit
 object EventLoggerApiManager {
     private var retrofit: Retrofit? = null
     private var service: PanopticonRequests? = null
-    // connect timeout
-    val client: PanopticonRequests?
-        get() {
+
+    val client: PanopticonRequests? get() {
             if (retrofit == null) {
                 val interceptor = interceptor
-                val httpClient =
-                    UnsafeOkHttpClient.unsafeOkHttpClient.newBuilder()
+                val httpClient = UnsafeOkHttpClient.unsafeOkHttpClient.newBuilder()
                 httpClient.addInterceptor(interceptor)
                 val logger = HttpLoggingInterceptor()
                 logger.level = HttpLoggingInterceptor.Level.HEADERS
@@ -30,16 +28,12 @@ object EventLoggerApiManager {
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(httpClient.build())
                     .build()
-                service =
-                    retrofit!!.create(
-                        PanopticonRequests::class.java
-                    )
+                service = retrofit!!.create(PanopticonRequests::class.java)
             }
             return service
         }
 
-    private val interceptor: Interceptor
-        private get() = Interceptor { chain -> chain.proceed(getBuilder(chain).build()) }
+    private val interceptor: Interceptor get() = Interceptor { chain -> chain.proceed(getBuilder(chain).build()) }
 
     private fun getBuilder(chain: Interceptor.Chain): Request.Builder {
         val original = chain.request()

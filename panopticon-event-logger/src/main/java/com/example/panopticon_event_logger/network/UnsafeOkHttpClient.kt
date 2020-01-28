@@ -10,16 +10,9 @@ import javax.net.ssl.X509TrustManager
 
 object UnsafeOkHttpClient {
     // Create a trust manager that does not validate certificate chains
-    val unsafeOkHttpClient:
-            // Install the all-trusting trust manager
-            // Create an ssl socket factory with our all-trusting manager
-            //            if (BuildConfig.DEBUG) {
-//                HttpLoggingInterceptor headerLogging = new HttpLoggingInterceptor();
-//                headerLogging.setLevel(HttpLoggingInterceptor.Level.BODY);
-//                okHttpClient.interceptors().add(headerLogging);
-//            }
-            OkHttpClient
-        get() = try { // Create a trust manager that does not validate certificate chains
+    val unsafeOkHttpClient: OkHttpClient
+        get() =
+            try {
             val trustAllCerts =
                 arrayOf<TrustManager>(
                     object : X509TrustManager {
@@ -53,13 +46,8 @@ object UnsafeOkHttpClient {
                 trustAllCerts[0] as X509TrustManager
             )
             builder.hostnameVerifier { hostname, session -> true }
-            //            if (BuildConfig.DEBUG) {
-//                HttpLoggingInterceptor headerLogging = new HttpLoggingInterceptor();
-//                headerLogging.setLevel(HttpLoggingInterceptor.Level.BODY);
-//                okHttpClient.interceptors().add(headerLogging);
-//            }
             builder.build()
-        } catch (e: Exception) {
+            } catch (e: Exception) {
             throw RuntimeException(e)
         }
 }

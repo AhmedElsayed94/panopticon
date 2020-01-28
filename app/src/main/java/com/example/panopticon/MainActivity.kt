@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
             "http://test.com/",
             "ACES125A"
         )
+        eventLogger.setLogsLimit(3)
         test(eventLogger)
+        eventLogger.fireEventsToServer()
     }
 
     private fun test(eventLogger : EventLogger) {
@@ -28,11 +30,12 @@ class MainActivity : AppCompatActivity() {
             .setDeviceModel("A10")
             .setDeviceId("AHJXKKK55")
             .setLogTime("00:00:00")
-//            .setEventData(null)
+            .setEventData("{test,test}")
             .setAppVersion("1.0.0")
             .build()
 
         eventLogger.logEvent(eventLoggerModel)
+
 
     }
 }
