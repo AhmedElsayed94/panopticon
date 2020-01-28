@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             .setDeviceModel("A10")
             .setDeviceId("AHJXKKK55")
             .setLogTime("00:00:00")
-            .setEventData(null)
+//            .setEventData(null)
             .setAppVersion("1.0.0")
             .build()
 
