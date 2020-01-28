@@ -100,7 +100,7 @@ Note :
 eventLogger.fireEventsToServer() will only triggered when it reach the log_limit that you put in your config.
 
 
-#Thanks
+# Thanks
 
 
 
