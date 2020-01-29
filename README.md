@@ -67,7 +67,7 @@ you can also set your cache logs limit by setting its value after creating your 
 
         eventLogger.setLogsLimit(3)
         
-you can send your event by using this modle
+you can send your event by using this model
 
 ```
        val eventLoggerModel = EventLoggerModel.EventLoggerBuilder()
@@ -99,6 +99,92 @@ Note :
 
 eventLogger.fireEventsToServer() will only triggered when it reach the log_limit that you put in your config.
 
+# API
+
+```
+@POST("event-log/")
+
+```
+Takes "auth_key" in header and the follwing json in body
+
+```
+{
+  "logs":[
+    {
+      "app_id":"CHSZKJ",
+      "app_name":"Panopticon",
+      "app_version":"1.0.0",
+      "device_id":"AHJXKKK55",
+      "device_model":"A10",
+      "event_data":"{
+        test,
+        test
+      }",
+      "event_name":"main_screen",
+      "ip":"192.168.1.1",
+      "lat":"",
+      "lng":"",
+      "log_time":"",
+      "user_id":13,
+      "user_type":"Super User"
+    },
+    {
+      "app_id":"CHSZKJ",
+      "app_name":"Panopticon",
+      "app_version":"1.0.0",
+      "device_id":"AHJXKKK55",
+      "device_model":"A10",
+      "event_data":"{
+        test,
+        test
+      }",
+      "event_name":"main_screen",
+      "ip":"192.168.1.1",
+      "lat":"",
+      "lng":"",
+      "log_time":"",
+      "user_id":13,
+      "user_type":"Super User"
+    },
+    {
+      "app_id":"CHSZKJ",
+      "app_name":"Panopticon",
+      "app_version":"1.0.0",
+      "device_id":"AHJXKKK55",
+      "device_model":"A10",
+      "event_data":"{
+        test,
+        test
+      }",
+      "event_name":"main_screen",
+      "ip":"192.168.1.1",
+      "lat":"",
+      "lng":"",
+      "log_time":"",
+      "user_id":13,
+      "user_type":"Super User"
+    },
+    {
+      "app_id":"CHSZKJ",
+      "app_name":"Panopticon",
+      "app_version":"1.0.0",
+      "device_id":"AHJXKKK55",
+      "device_model":"A10",
+      "event_data":"{
+        test,
+        test
+      }",
+      "event_name":"main_screen",
+      "ip":"192.168.1.1",
+      "lat":"",
+      "lng":"",
+      "log_time":"",
+      "user_id":13,
+      "user_type":"Super User"
+    }
+  ]
+}
+```
 
 # Thanks
 
