@@ -105,7 +105,7 @@ eventLogger.fireEventsToServer() will only triggered when it reach the log_limit
 @POST("event-log/")
 
 ```
-Takes "auth_key" in header and the following json in body
+Takes "key" in header and the following json in body
 
 ```
 {
