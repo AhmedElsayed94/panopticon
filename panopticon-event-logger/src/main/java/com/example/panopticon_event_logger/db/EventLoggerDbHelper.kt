@@ -50,6 +50,7 @@ object EventLoggerDbHelper {
             event.user_type = eventLoggerModel.userType
             event.device_model = eventLoggerModel.deviceModel
             event.device_id = eventLoggerModel.deviceId
+            event.log_time = eventLoggerModel.logTime
             event.event_data = eventLoggerModel.eventData
             event.app_version = eventLoggerModel.appVersion
             event.lat = eventLoggerModel.lat
