@@ -9,6 +9,6 @@ import retrofit2.http.POST
 interface PanopticonRequests {
 
     @POST("event-log/")
-    fun logEvent(@Header("auth_key") AuthKey: String?, @Body event: EventsLoggerModel): Call<Any?>?
+    fun logEvent(@Header("key") AuthKey: String?, @Body event: EventsLoggerModel): Call<Any?>?
 
 }

@@ -35,8 +35,6 @@ object EventLoggerDbHelper {
                 .build()
             resultLogs.add(eventLoggerModel)
         }
-//        Log.d("event","found : "+ resultLogs.size)
-
         return resultLogs
     }
 
@@ -58,11 +56,8 @@ object EventLoggerDbHelper {
             event.lng = eventLoggerModel.lng
         }, {
             // success
-//            Log.d("event","Add success")
         }, {
             // error
-//            Log.d("event","Add error")
-
         })
     }
 
@@ -71,8 +66,6 @@ object EventLoggerDbHelper {
         val results = realm.where(LoggerRealmObject::class.java).limit(LOGS_LIMIT).findAll()
         results.deleteAllFromRealm()
         realm.commitTransaction()
-//        Log.d("event","delete")
-
     }
 
 
