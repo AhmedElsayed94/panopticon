@@ -1,6 +1,6 @@
-package com.example.panopticon_event_logger.network
+package com.panopticon.panopticon_event_logger.network
 
-import com.example.panopticon_event_logger.utils.EventLoggerConstants
+import com.panopticon.panopticon_event_logger.utils.EventLoggerConstants
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor

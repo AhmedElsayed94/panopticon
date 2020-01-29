@@ -1,6 +1,6 @@
-package com.example.panopticon_event_logger.main
+package com.panopticon.panopticon_event_logger.main
 
-import com.example.panopticon_event_logger.model.EventsLoggerModel
+import com.panopticon.panopticon_event_logger.model.EventsLoggerModel
 
 interface EventLoggerContract {
 

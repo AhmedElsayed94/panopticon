@@ -1,15 +1,13 @@
-package com.example.panopticon_event_logger.base
+package com.panopticon.panopticon_event_logger.base
 
-import android.app.Application
+import android.content.Context
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class MyApplication : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
+class Panopticon(val context : Context) {
+    init {
         // Initialize Realm. Should only be done once when the application starts.
-        Realm.init(this)
+        Realm.init(context)
         val config = RealmConfiguration.Builder().build()
         Realm.setDefaultConfiguration(config)
     }

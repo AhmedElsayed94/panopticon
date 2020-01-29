@@ -1,15 +1,19 @@
-package com.example.panopticon
+package com.panopticon.panopticon
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.panopticon_event_logger.main.EventLogger
-import com.example.panopticon_event_logger.model.EventLoggerModel.EventLoggerBuilder
+import com.example.panopticon.R
+import com.panopticon.panopticon_event_logger.base.Panopticon
+import com.panopticon.panopticon_event_logger.main.EventLogger
+import com.panopticon.panopticon_event_logger.model.EventLoggerModel
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Panopticon(this)
         val eventLogger = EventLogger(
             "http://test.com/",
             "ACES125A"
@@ -20,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun test(eventLogger : EventLogger) {
-        val eventLoggerModel = EventLoggerBuilder()
+        val eventLoggerModel = EventLoggerModel.EventLoggerBuilder()
             .setIp("192.168.1.1")
             .setAppId("CHSZKJ")
             .setAppName("Panopticon")
@@ -35,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         eventLogger.logEvent(eventLoggerModel)
-
 
     }
 }

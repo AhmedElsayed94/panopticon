@@ -1,4 +1,4 @@
-package com.example.panopticon_event_logger.network
+package com.panopticon.panopticon_event_logger.network
 
 import okhttp3.OkHttpClient
 import java.security.SecureRandom

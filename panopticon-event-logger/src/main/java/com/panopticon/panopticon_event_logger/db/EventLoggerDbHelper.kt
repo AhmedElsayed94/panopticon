@@ -1,9 +1,9 @@
-package com.example.panopticon_event_logger.db
+package com.panopticon.panopticon_event_logger.db
 
 import android.util.Log
-import com.example.panopticon_event_logger.model.EventLoggerModel
-import com.example.panopticon_event_logger.model.LoggerRealmObject
-import com.example.panopticon_event_logger.utils.EventLoggerConstants.LOGS_LIMIT
+import com.panopticon.panopticon_event_logger.model.EventLoggerModel
+import com.panopticon.panopticon_event_logger.model.LoggerRealmObject
+import com.panopticon.panopticon_event_logger.utils.EventLoggerConstants.LOGS_LIMIT
 import io.realm.Realm
 import java.util.*
 import kotlin.collections.ArrayList

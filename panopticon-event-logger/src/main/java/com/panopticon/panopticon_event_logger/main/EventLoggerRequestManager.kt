@@ -1,9 +1,9 @@
-package com.example.panopticon_event_logger.main
+package com.panopticon.panopticon_event_logger.main
 
-import com.example.panopticon_event_logger.db.EventLoggerDbHelper
-import com.example.panopticon_event_logger.model.EventsLoggerModel
-import com.example.panopticon_event_logger.network.EventLoggerApiManager
-import com.example.panopticon_event_logger.network.PanopticonRequests
+import com.panopticon.panopticon_event_logger.db.EventLoggerDbHelper
+import com.panopticon.panopticon_event_logger.model.EventsLoggerModel
+import com.panopticon.panopticon_event_logger.network.EventLoggerApiManager
+import com.panopticon.panopticon_event_logger.network.PanopticonRequests
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

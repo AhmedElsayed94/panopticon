@@ -1,4 +1,4 @@
-package com.example.panopticon_event_logger.utils
+package com.panopticon.panopticon_event_logger.utils
 
 object EventLoggerConstants {
 

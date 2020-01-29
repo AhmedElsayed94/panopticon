@@ -1,4 +1,4 @@
-package  com.example.panopticon_event_logger.model
+package  com.panopticon.panopticon_event_logger.model
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

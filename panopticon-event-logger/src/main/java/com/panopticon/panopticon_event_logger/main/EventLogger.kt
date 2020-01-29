@@ -1,9 +1,9 @@
-package com.example.panopticon_event_logger.main
+package com.panopticon.panopticon_event_logger.main
 
-import com.example.panopticon_event_logger.db.EventLoggerDbHelper
-import com.example.panopticon_event_logger.model.EventLoggerModel
-import com.example.panopticon_event_logger.model.EventsLoggerModel
-import com.example.panopticon_event_logger.utils.EventLoggerConstants
+import com.panopticon.panopticon_event_logger.db.EventLoggerDbHelper
+import com.panopticon.panopticon_event_logger.model.EventLoggerModel
+import com.panopticon.panopticon_event_logger.model.EventsLoggerModel
+import com.panopticon.panopticon_event_logger.utils.EventLoggerConstants
 
 class EventLogger(private val baseUrl: String, private val authKey: String) : EventLoggerContract.IEventLogger {
 

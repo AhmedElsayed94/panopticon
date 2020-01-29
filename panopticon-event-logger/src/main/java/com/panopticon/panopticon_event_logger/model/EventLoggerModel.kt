@@ -1,4 +1,4 @@
-package com.example.panopticon_event_logger.model
+package com.panopticon.panopticon_event_logger.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
