@@ -28,14 +28,14 @@ Step 2. Add the dependency
   
 Step 3. 
 
-this sdk is dependent on Realm so You must provide an Android context to initialize Realm in onCreate on an application subclass:
-
+You must provide an Android context to initialize Panopticon in onCreate on an application subclass:
+Should only be done once when the application starts.
 ```
 public class MyApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    Realm.init(this);
+     Panopticon(this);
   }
 }
 ```
